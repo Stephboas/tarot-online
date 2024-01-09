@@ -1,0 +1,300 @@
+@charset "UTF-8";
+.menu-container {
+  height: 90px;
+  background-color: #1A1A1A;
+  z-index: 3;
+  position: relative;
+}
+.menu-container .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+.menu-container .logo img {
+  width: 58px;
+}
+.menu-container .menu-bar {
+  position: relative;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.menu-container .sidebar {
+  position: absolute;
+  top: 25px;
+  left: 90px;
+  width: 130px;
+  height: 36px;
+  background-color: #F4CE16;
+  border-radius: 8px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.menu-container .sidebar:hover {
+  box-shadow: 0 4px 8px #BC9D08;
+}
+.menu-container .options {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+.menu-container .options .language-options {
+  border: 4px solid #F4CE16;
+  border-radius: 8px;
+  margin: 12px;
+}
+.menu-container .options .language-options img {
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+}
+.menu-container .options .language-options .custom-button {
+  background-color: black;
+}
+.menu-container .options .language-options .dropdown-menu {
+  border: 2px solid #F4CE16;
+  border-radius: 8px;
+  background-color: #1A1A1A;
+}
+.menu-container .options .language-options .dropdown-menu .dropdown-item {
+  color: #F0F0F0;
+  background-color: #1A1A1A;
+}
+.menu-container .options .register-button {
+  margin-right: 90px;
+  background-color: #F4CE16;
+  color: #1A1A1A;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.menu-container .options .register-button .user-icon {
+  font-size: 14px;
+  margin-right: 4px;
+}
+.menu-container .options .register-button:hover {
+  background-color: #BC9D08;
+  color: #1A1A1A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.menu-container .language-text {
+  color: #F0F0F0;
+}
+.menu-container .burger {
+  margin-left: 14px;
+  margin-right: 8px;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.menu-container .burger:hover {
+  transform: rotateY(180deg);
+}
+.menu-container .line {
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  font-family: "Lato", sans-serif;
+}
+.search-box .input-search {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+  background-color: #F4CE16;
+  padding-right: 40px;
+  color: #fff;
+}
+.search-box .input-search::placeholder {
+  color: #F0F0F0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.search-box .btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  pointer-events: painted;
+  color: #000000;
+  background-color: transparent;
+}
+.search-box .btn-search.black {
+  color: #000000;
+}
+.search-box .btn-search.black {
+  color: #000000;
+}
+.search-box .btn-search.input-focus {
+  color: #ffffff;
+}
+.search-box .btn-search:focus {
+  color: #ffffff;
+}
+.search-box .btn-search:focus ~ .input-search {
+  width: 300px;
+  border-radius: 8px solid #F4CE16;
+  background-color: transparent;
+  border-bottom: 2px solid #F4CE16;
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.search-box .input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 2px solid #F4CE16;
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+.burger {
+  margin-left: 14px;
+  margin-right: 8px;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.burger:hover {
+  transform: rotateY(180deg);
+}
+
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.search-bar-container {
+  position: relative;
+  width: 80%;
+}
+
+.search-bar {
+  width: 100%;
+  height: 50px;
+  padding: 4px 32px 4px 4px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  transition: border 0.3s ease;
+}
+.search-bar::placeholder {
+  padding: 0 0 0 4px;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 530;
+  /* Adicione outras propriedades de estilo conforme necessário */
+}
+
+.search-bar:focus {
+  outline: none;
+  border: 2px solid #1A1A1A;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.page-options {
+  margin-top: 36px;
+}
+.page-options a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.menu-sidebar {
+  background-color: #F4CE16;
+}
+
+@media screen and (max-width: 768px) {
+  .search-box,
+  .language-options,
+  .options,
+  .search-icon,
+  .input-search,
+  .btn-search {
+    display: none;
+  }
+  .menu-container .logo {
+    width: 36px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .menu-container .sidebar {
+    width: 56px;
+    margin-left: -70px;
+  }
+  .menu-container .sidebar .menu-text {
+    display: none;
+  }
+  .menu-container .sidebar .burger {
+    margin-left: 10px;
+  }
+  .menu-container .options {
+    width: 100%;
+  }
+  .menu-container .options .register-button {
+    margin-left: 350px;
+    width: 48px;
+    height: 38px;
+  }
+  .menu-container .options .register-button .login-text {
+    display: none;
+  }
+  .menu-container .options .register-button .user-icon {
+    font-size: 18px;
+    margin: 4px;
+  }
+  .menu-container .options .register-button:hover {
+    background-color: #BC9D08;
+    color: #1A1A1A;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/*# sourceMappingURL=Menu.css.map */

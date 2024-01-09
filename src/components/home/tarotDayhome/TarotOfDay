@@ -1,0 +1,110 @@
+import React, { useState, useEffect, useRef } from 'react';
+import './TarotCardOfDay.scss';
+import { Navigate, useNavigate } from 'react-router-dom';
+import cardsOptions from '../../cards/CardsOptions';
+import cutDeckAnimation from '../../cards/DeckAnimation'; 
+import shuffleDeckAnimation from '../../cards/shuffleDeckAnimation';
+
+const TarotCardOfDay = () => {
+  const [cutting, setCutting] = useState(false);
+  const [canReveal, setCanReveal] = useState(false);
+  const [cutAnimation, setCutAnimation] = useState(false);
+  const [shuffling, setShuffling] = useState(false);
+  const [shuffledCards, setShuffledCards] = useState([]);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [showRevealButton, setShowRevealButton] = useState(false);
+  const cardContainerRef = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const initialShuffled = [...cardsOptions].sort(() => Math.random() - 0.5);
+    setShuffledCards(initialShuffled);
+  }, []);
+
+  const shuffleCards = async () => {
+    setShuffling(true);
+    await shuffleDeckAnimation(
+      setShuffling,
+      setShuffledCards,
+      setSelectedCard,
+      setShowRevealButton,
+      cardContainerRef.current // Certifique-se de passar a referência corretamente
+    );
+    setShuffling(false);
+    setCanReveal(true);
+  };
+
+  const cutCards = async () => {
+    setCanReveal(false);
+    setCutting(true);
+    cutDeckAnimation(setShuffledCards);
+    setCutting(false);
+    setCanReveal(true);
+  };
+
+  const handleCardHover = (index) => {
+    const cardElement = cardContainerRef.current.children[index];
+    cardElement.classList.add('hovered-card');
+  };
+
+  const revealCard = () => {
+    if (selectedCard !== null) {
+      const updatedCards = [...shuffledCards];
+      updatedCards[selectedCard].isRevealed = true;
+      setShuffledCards(updatedCards);
+      navigate(`/cards-information/${selectedCard}`);
+    }
+  };
+
+  return (
+    <div className={`tarot-of-day ${shuffling ? 'shuffling' : ''}`}>
+      <h2>TAROT DO DIA</h2>
+
+      <p>
+        Aproveite o Tarot do Dia para obter previsões e orientações valiosas em várias áreas da sua vida. O Tarot do Dia oferece insights profundos para ajudá-lo a tomar decisões importantes - seja relacionadas ao amor, trabalho ou saúde.
+      </p>
+      <p>
+        Descubra a Espiritualidade em qualquer lugar, inclusive online. Experimente agora mesmo! Embarque em uma jornada de autoconhecimento e descubra novas perspectivas com o Tarot do Dia.
+      </p>
+      <p>
+        É fácil e rápido: Concentre-se em seus planos para o dia, embaralhe as cartas e então corte o baralho uma, duas ou três vezes, e então de acordo com sua intuição selecione uma carta para revelar uma mensagem significativa para o seu dia!
+      </p>
+
+      <div className={`cards-container ${shuffling ? 'shuffling' : ''} ${cutAnimation ? 'cutting' : ''}`} ref={cardContainerRef}>
+         {shuffledCards.map((card, index) => (
+          <div
+            key={index}
+            className={`card ${selectedCard === index ? 'revealed' : ''}`}
+            onClick={() => setSelectedCard(index)}
+            onMouseEnter={() => handleCardHover(index)}
+            onMouseLeave={() => {
+              const cardElement = cardContainerRef.current.children[index];
+              cardElement.classList.remove('hovered-card');
+            }}
+          >
+            <img
+              src={card.isRevealed ? card.frontImage : card.backImage}
+              alt={`Carta ${card.name}`}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="buttons-container">
+      <button onClick={shuffleCards} disabled={shuffling || cutting}>
+          EMBARALHAR
+        </button>
+        <button onClick={cutCards} disabled={shuffling || cutting}>
+          CORTAR
+        </button>
+        <button onClick={revealCard} disabled={!canReveal || selectedCard === null}>
+            REVELAR CARTA
+          </button>
+
+
+      </div>
+    </div>
+  );
+};
+
+export default TarotCardOfDay;

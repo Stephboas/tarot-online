@@ -1,0 +1,345 @@
+// Importe as variáveis ou defina-as diretamente se necessário
+@import '../../scss/variables';
+
+.menu-container {
+    height: 90px;
+    background-color: $background-second;
+    z-index: 3;
+    position: relative;
+
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 4;
+
+        img {
+            width: 58px;
+        }
+    }
+
+    .menu-bar {
+        position: relative;
+        font-family: $font-botao;
+        font-weight: 700;
+    }
+
+    .sidebar {
+        position: absolute;
+        top: 25px;
+        left: 90px;
+        width: 130px;
+        height: 36px;
+        background-color: $cor-primaria;
+        border-radius: 8px;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 4px 8px $btn-color;
+        }
+    }
+
+    .options {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+
+        .language-options {
+            border: 4px solid $cor-primaria;
+            border-radius: 8px;
+            margin: 12px;
+
+            img {
+                width: 24px;
+                height: 24px;
+                margin: 4px;
+            }
+
+            .custom-button {
+                background-color: black; // Defina a cor de fundo desejada
+            }
+
+            .dropdown-menu {
+                border: 2px solid $cor-primaria;
+                border-radius: 8px;
+                background-color: $background-second;
+
+                .dropdown-item {
+                    color: $text;
+                    background-color: $background-second;
+                }
+            }
+        }
+
+        .register-button {
+            margin-right: 90px;
+            background-color: $cor-primaria;
+            color: $background-second;
+            padding: 8px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center; // Para centralizar verticalmente
+    
+            .user-icon {
+                font-size: 14px;
+                margin-right: 4px; // Ajuste a margem conforme necessário
+            }
+    
+            &:hover {
+                background-color: $btn-color;
+                color: $background-second;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+        }
+    }
+
+    .language-text {
+        color: $text; // Defina a cor desejada para o texto dos idiomas;
+    }
+
+    .burger {
+        margin-left: 14px;
+        margin-right: 8px;
+        padding: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 32px;
+        cursor: pointer;
+        transition: transform 0.3s ease; // Adicione esta linha para a transição
+
+        &:hover {
+            transform: rotateY(180deg); // Rotação de 180 graus para simular uma carta virando
+        }
+    }
+
+    .line {
+        width: 100%;
+        height: 4px;
+        background-color: #000;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+}
+
+.search-box {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    font-family: $font-botao;
+
+    .input-search {
+        height: 50px;
+        width: 50px;
+        border-style: none;
+        padding: 10px;
+        font-size: 18px;
+        letter-spacing: 2px;
+        outline: none;
+        border-radius: 25px;
+        transition: all 0.5s ease-in-out;
+        background-color: $cor-primaria;
+        padding-right: 40px;
+        color: #fff;
+
+        &::placeholder {
+            color: $text;
+            font-size: 18px;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+    }
+
+    .btn-search {
+        width: 50px;
+        height: 50px;
+        border-style: none;
+        font-size: 20px;
+        font-weight: bold;
+        outline: none;
+        cursor: pointer;
+        border-radius: 50%;
+        position: absolute;
+        right: 0px;
+        pointer-events: painted;
+        color: #000000; // Altere para a cor desejada
+        background-color: transparent;
+
+        &.black {
+            color: #000000;
+        }
+
+        &.black {
+            color: #000000; // Altere para a cor desejada
+        }
+
+        &.input-focus {
+            color: #ffffff; // Mantém a cor preta quando o input está em foco
+        }
+
+        &:focus {
+            color: #ffffff;
+        }
+    }
+
+    .btn-search:focus ~ .input-search {
+        width: 300px;
+        border-radius: 8px solid $cor-primaria;
+        background-color: transparent;
+        border-bottom: 2px solid $cor-primaria;
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+    }
+
+    .input-search:focus {
+        width: 300px;
+        border-radius: 0px;
+        background-color: transparent;
+        border-bottom: 2px solid $cor-primaria;
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+    }
+}
+
+.burger {
+    margin-left: 14px;
+    margin-right: 8px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.3s ease; // Adicione esta linha para a transição
+
+    &:hover {
+        transform: rotateY(180deg); // Rotação de 180 graus para simular uma carta virando
+    }
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+// Pesquisar do side bar
+.search-bar-container {
+    position: relative;
+    width: 80%; // ou o valor desejado
+}
+
+.search-bar {
+    width: 100%;
+    height: 50px;
+    padding: 4px 32px 4px 4px; // Ajuste o padding conforme necessário
+    font-size: 16px; // Alterado para 16px (ou o tamanho desejado)
+    border-radius: 8px;
+    border: none; // Remover a borda padrão
+    transition: border 0.3s ease; // Adicionar uma transição suave
+
+    &::placeholder {
+        padding: 0 0 0 4px;
+        font-size: 16px; // Alterado para 14px (ou o tamanho desejado)
+        font-family: $font-botao; // Substitua 'SuaFontePlaceholder' pela fonte desejada
+        font-weight: 530;
+        /* Adicione outras propriedades de estilo conforme necessário */
+    }
+}
+
+.search-bar:focus {
+    outline: none; // Remover a borda de foco padrão
+    border: 2px solid $background-second; // Adicione uma borda personalizada quando o input está em foco
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+// Termina Pesquisar do side bar
+
+.page-options {
+    margin-top: 36px;
+
+    a {
+        display: block;
+        padding: 8px;
+        text-decoration: none;
+    }
+}
+
+.menu-sidebar {
+    background-color: $cor-primaria;
+}
+
+@media screen and (max-width: 768px) {
+    .search-box,
+    .language-options,
+    .options,
+    .search-icon,
+    .input-search,
+    .btn-search {
+        display: none;
+    }
+
+    .menu-container {
+        .logo {
+            width: 36px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .sidebar {
+            width: 56px;
+            margin-left: -70px;
+
+            .menu-text {
+                display: none;
+            }
+
+            .burger {
+                margin-left: 10px;
+            }
+        }
+
+        .options {
+            width: 100%;
+
+        .register-button {
+            margin-left: 350px;
+            width: 48px;
+            height: 38px;
+
+            .login-text{
+                display: none;
+            }
+
+            .user-icon {
+                font-size: 18px;
+                margin: 4px;
+            }
+
+            &:hover {
+                background-color: $btn-color;
+                color: $background-second;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+        }
+
+    }
+     }
+}

@@ -1,0 +1,45 @@
+@import '../../../scss/variables';
+
+.cards-information {
+    color: $text;
+    background-color: $background-second;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: $text;
+      margin-bottom: 20px;
+    }
+  
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
+        color: $text;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+  
+      img {
+        max-width: 30%;
+        height: auto;
+        border: 2px solid $btn-shadow;
+        border-radius: 8px;
+      }
+    }
+  }

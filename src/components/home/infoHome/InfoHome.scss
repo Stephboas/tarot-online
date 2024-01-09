@@ -1,0 +1,114 @@
+@import '../../../scss/variables';
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  min-width: 800px;
+  background-color: $background-light;
+  position: relative;
+}
+
+.title-container h2 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: $primary-text;
+  margin-top: 75px;
+  text-align: center; // Garante que o texto esteja centralizado
+  width: 100%; // Garante que o texto ocupe toda a largura disponível
+}
+
+.info-container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.info-container::before,
+.info-container::after {
+  content: ' ';
+  display: table;
+}
+
+.info-title {
+  margin-bottom: 16px; // Ajuste conforme necessário
+}
+
+.info-video {
+  position: absolute;
+  left: -180px; // Distância do lado esquerdo
+  top: 180px; // Mantém o vídeo no topo
+  width: calc(50% - 165px); // 50% da largura - distância do lado esquerdo
+  z-index: 3;
+
+  video {
+    width: 140%; // Garante que o vídeo ocupe toda a largura
+    height: auto;
+  }
+}
+
+.info-content {
+  padding: 100px 0;
+  width: 50%;
+  margin-left: calc(40% + 60px); // 50% da largura + distância do lado esquerdo
+  z-index: 2;
+}
+
+.info-content p {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: $background;
+  text-align: justify;
+}
+
+.info-content button.centered-button {
+  display: block;
+  margin: 0 auto; // Isso centralizará o botão horizontalmente em relação ao contêiner pai
+  background-color: $cor-primaria;
+  color: $background-second;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 0;
+  transition: transform 0.3s;
+  margin-top: 50px;
+
+  &:hover {
+    background-color: $btn-color;
+    box-shadow: 0 4px 8px $btn-shadow-primary;
+    transform: scale(1.1);
+  }
+}
+
+// Adicionando a media query para design responsivo
+@media screen and (max-width: 768px) {
+  .info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-video {
+    display: none;
+  }
+
+  .info-title {
+    font-size: 36px; // Diminui o tamanho do título para telas menores
+  }
+
+  .info-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .info-content p {
+    font-size: 18px; // Diminui o tamanho do texto para telas menores
+    text-align: center; // Alinha o texto ao centro
+  }
+
+  .info-content button.centered-button {
+    font-size: 14px; // Diminui o tamanho do botão para telas menores
+    margin-top: 20px; // Ajusta a margem superior do botão
+  }
+}

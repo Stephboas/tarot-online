@@ -1,0 +1,40 @@
+.cards-information {
+  color: #F0F0F0;
+  background-color: #1A1A1A;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.cards-information h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #F0F0F0;
+  margin-bottom: 20px;
+}
+.cards-information div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.cards-information div h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #F0F0F0;
+  margin-bottom: 10px;
+}
+.cards-information div p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.cards-information div img {
+  max-width: 30%;
+  height: auto;
+  border: 2px solid #ffd712;
+  border-radius: 8px;
+}
+
+/*# sourceMappingURL=CardsInformation.css.map */

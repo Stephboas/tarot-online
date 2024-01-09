@@ -1,0 +1,141 @@
+@import '../../scss/variables';
+
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  min-width: 800px;
+  background-color: $background-light;
+  position: relative;
+}
+
+.home-content {
+  padding-top: 100px;
+  padding-left: 180px;
+  z-index: 3;
+  max-width: 950px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 54px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    color: $primary-text;
+  }
+
+  img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 16px;
+    overflow: hidden;
+    animation: floatAnimation 4s infinite alternate; /* Adiciona a animação de flutuação */
+  }
+
+  p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: $background;
+    white-space: normal; /* Permite que o texto quebre para a próxima linha */
+  }
+
+  button {
+    background-color: $cor-primaria;
+    color: $background-second;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 0;
+    margin-top: 30px;
+    width: 330px;
+    height: 56px;
+    transition: transform 0.3s; /* Adiciona uma transição suave no efeito de hover */
+
+    &:hover {
+      background-color: $btn-color;
+      box-shadow: 0 4px 8px $btn-shadow-primary;
+    }
+  }
+
+  button:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão em 10% no hover */
+  }
+}
+
+.home-video {
+  display: block; /* Exibe o vídeo para telas maiores (não responsivas) */
+  position: absolute;
+  top: 100px;
+  margin-left: 550px;
+  z-index: 2;
+  overflow: hidden; /* Adiciona overflow: hidden para cortar o conteúdo fora do escopo */
+
+  video {
+    width: 130%;
+    height: auto;
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Ajuste para a altura desejada de flutuação */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .home-content {
+    padding: 0;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .home-content h1,
+  .home-content p {
+    word-break: break-word;
+    text-align: justify;
+  }
+
+  .home-content h1 {
+    font-size: 24px;
+  }
+
+  .home-content img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+    overflow: hidden;
+    margin-right: 350px;
+  }
+
+  .home-content p {
+    font-size: 16px;
+  }
+
+  .home-content button {
+    width: 270px;
+    max-width: 100%;
+    margin-right: 400px;
+    font-size: 14px;
+  }
+
+  .home-video {
+    display: none;
+  }
+}
