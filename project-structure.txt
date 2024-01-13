@@ -1,6 +1,6 @@
+c:\Users\magah\Desktop\Projetos\esoterismo_site\tarot-online\index.html
 c:\Users\magah\Desktop\Projetos\esoterismo_site\tarot-online\package.json
 c:\Users\magah\Desktop\Projetos\esoterismo_site\tarot-online\project-structure.mjs
-c:\Users\magah\Desktop\Projetos\esoterismo_site\tarot-online\public\index.html
 c:\Users\magah\Desktop\Projetos\esoterismo_site\tarot-online\public\logo192.png
 c:\Users\magah\Desktop\Projetos\esoterismo_site\tarot-online\public\logo512.png
 c:\Users\magah\Desktop\Projetos\esoterismo_site\tarot-online\public\manifest.json
